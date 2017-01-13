@@ -1,0 +1,56 @@
+<div class = "container">
+  <div class="row">
+    <h2>
+      {{selectedQuestion?.qtitle}}
+    </h2>
+    <h4>
+      {{selectedQuestion?.description}}
+    </h4>
+  </div>
+
+  <div class="row" *ngIf="!answerButtonHide">
+    <button class="btn btn-warning" (click) = "setInputVisible()" >
+      Answer Now
+    </button>
+  </div>
+
+  <div class="row" *ngIf="answerVisibility">
+    <h3>
+      Answers
+    </h3>
+    <div class="col-xs-12" *ngFor="let answer of selectedQuestion.answers; let i = index">
+      <h4> <span>{{i+1}}.</span> {{answer}}</h4>
+    </div>
+    
+  </div>
+
+  <div class="row form-group" *ngIf="answerTextBoxFlag">
+    <form id="question-detail" (ngSubmit) = "onSubmit(f.value)" #f = "ngForm">
+      <div class="form-input">
+        <textarea 
+          rows = 5 
+          class="textcustom form-control" 
+          placeholder="type your answer here."
+          ngModel
+          name = "answer"
+          required
+          [(ngModel)] = "clearDescript"
+        ></textarea>
+      </div>
+
+
+      <div class="btn-group answerpost" role="group" >
+        <div class="btn-group" role="group">
+          <button class="btn btn-success btn-outline" type="submit" >Post</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button class="btn btn-success" type="reset" >Clear</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+
+</div>
+

@@ -1,0 +1,11 @@
+<a [routerLink] = "[questionId]" class="list-group-item clearfix" routerLinkActive = "active">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{question.qtitle}}</h4>
+    <p class="list-group-item-text">date</p>
+  </div>
+  <span class="pull-right">
+    <span class="count" *ngIf = "showCount">{{question.answers.length}}</span>
+  </span>
+</a>
+
+

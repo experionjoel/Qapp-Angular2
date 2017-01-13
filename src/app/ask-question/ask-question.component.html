@@ -1,0 +1,43 @@
+<div class="row">
+
+    <h2> Post your question. </h2>
+
+<form id = "ask-question" (ngSubmit) = "onSubmit(f.value)" #f = "ngForm">
+    <div class="row">
+    <div class="col-lg-6">
+      <div class="">
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Type your question here."
+          required
+          name="qtitle"
+          [(ngModel)] = "clearQs"
+          >
+        <span class="input-group-btn">
+          <button class="btn btn-success qsdescription" type="submit" [disabled]="!f.valid" (keyup.enter)="onSubmit(f.value)">
+            Post
+          </button>
+        </span>
+        <span class="input-group-btn">
+          <button class="btn btn-default qsdescription" type="button" >Clear</button>
+        </span>
+      </div>
+    </div><!-- /.col-lg-6 -->
+
+      <div class="col-lg-6">
+        <div class="input-group qsdescription">
+          <textarea 
+            type="text"
+            rows = 5 
+            class="qsdescription form-control" 
+            placeholder="Type a description for your question here."
+            name="description"
+            [(ngModel)] = "clearDescript"
+          ></textarea>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+</form>
+
+</div>

@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  overflow-x: hidden;
+}
+
+.count {
+  background-color: #1976d2;
+  color: #fff;
+  border-radius: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  margin-left: 5px;
+}
+
+.textcustom {
+  width: 60% !important;
+  margin-top: 2% !important;
+  margin-bottom: 1% !important;
+}
+
+.answerpost {
+  width: 100% !important;
+}
+
+.qsdescription {
+  width: 100% !important;
+}
