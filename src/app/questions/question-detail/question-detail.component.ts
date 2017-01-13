@@ -34,12 +34,14 @@ export class QuestionDetailComponent implements OnInit, OnChanges {
       (params: any) => {
         this.questionIndex = params['id'];
         this.selectedQuestion = this.questionService.getQuestion(this.questionIndex);
+		console.log("select",this.selectedQuestion.answers.length);
         if(this.selectedQuestion.answers.length > 0) {
           this.answerVisibility = true;
+		  console.log("inside",this.answerVisibility);
         }
         this.answerTextBoxFlag = false;
         this.answerButtonHide = false;
-        this.answerVisibility = false;
+        // this.answerVisibility = false;
       }
     )
   }
@@ -64,7 +66,7 @@ export class QuestionDetailComponent implements OnInit, OnChanges {
   }
 
 // This method is used to unsubscribe from the presently selected route
-  ngOnDestroy() {
+	ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 

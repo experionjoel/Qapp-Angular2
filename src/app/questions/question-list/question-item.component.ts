@@ -17,7 +17,9 @@ export class QuestionItemComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    if(this.question.answers.length > 0) {
+      this.showCount = true;
+    }
   }
 
 }
